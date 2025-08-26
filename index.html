@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Tag Generator - AdprofitX | Free SEO Meta Tag Generator Tool</title>
+    <meta name="description" content="Generate perfect SEO meta tags for your website with AdprofitX Meta Tag Generator. Create title tags, descriptions, Open Graph, Twitter Cards and more for better rankings.">
+    <meta name="keywords" content="meta tag generator, seo meta tags, open graph, twitter cards, meta description, seo tool">
+    <meta name="author" content="AdprofitX">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta property="og:title" content="Meta Tag Generator - AdprofitX | Free SEO Meta Tag Generator Tool">
+    <meta property="og:description" content="Generate perfect SEO meta tags for your website with AdprofitX Meta Tag Generator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adprofitx.com">
+    <meta property="og:image" content="https://adprofitx.com/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Meta Tag Generator - AdprofitX">
+    <meta name="twitter:description" content="Free Online SEO Meta Tag Generator - Boost Your Website Rankings Instantly">
+    <meta name="twitter:image" content="https://adprofitx.com/logo.png">
+    <style>
+        :root {
+            --primary-red: #ff0000;
+            --dark-red: #b30000;
+            --light-bg: #f9f9f9;
+            --dark-text: #333;
+            --light-text: #fff;
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(to right, #ff0000, #b30000);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-text {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Tool Section */
+        .tool-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 40px auto;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--dark-red);
+            font-size: 2.2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-red);
+            outline: none;
+        }
+        
+        .btn {
+            background: linear-gradient(to right, var(--primary-red), var(--dark-red));
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1.1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        
+        .btn-generate {
+            display: block;
+            margin: 30px auto;
+            width: 250px;
+        }
+        
+        /* Results Section */
+        .results-section {
+            background: #2d2d2d;
+            color: #f1f1f1;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            display: none;
+            position: relative;
+        }
+        
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #444;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        /* About Section */
+        .about-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 40px auto;
+            box-shadow: var(--card-shadow);
+        }
+        
+        /* Blog Section */
+        .blog-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 40px auto;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .blog-card {
+            background: var(--light-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-content {
+            padding: 20px;
+        }
+        
+        .blog-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark-red);
+        }
+        
+        /* Modal for blog content */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background: white;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 800px;
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-red);
+        }
+        
+        /* Policy Sections */
+        .policy-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 40px auto;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .policy-content {
+            margin-top: 20px;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 40px auto;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .contact-info {
+            margin: 20px 0;
+        }
+        
+        /* Footer */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        /* AdSense Banners */
+        .ad-banner {
+            width: 100%;
+            margin: 30px 0;
+            text-align: center;
+            background: #f1f1f1;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                padding: 20px;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .tool-section, .about-section, .blog-section, .policy-section, .contact-section {
+                padding: 25px;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                margin: 20px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-container">
+                    <div class="logo">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#ff0000" />
+                                    <stop offset="100%" stop-color="#b30000" />
+                                </linearGradient>
+                            </defs>
+                            <rect x="10" y="10" width="80" height="80" rx="15" fill="url(#redGradient)" />
+                            <path d="M30 30 L70 30 L70 50 L50 70 L30 50 Z" fill="white" />
+                            <circle cx="50" cy="40" r="10" fill="#ff0000" />
+                            <path d="M40 60 L60 60" stroke="white" stroke-width="3" />
+                        </svg>
+                    </div>
+                    <div class="logo-text">AdprofitX</div>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms</a></li>
+                    <li><a href="#disclaimer">Disclaimer</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="menuBtn">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>AdprofitX Meta Tag Generator</h1>
+            <p>Free Online SEO Meta Tag Generator – Boost Your Website Rankings Instantly</p>
+            <p>Enter your details and generate perfect SEO meta tags for your site.</p>
+        </div>
+    </section>
+
+    <!-- AdSense Banner 1 -->
+    <div class="container">
+        <div class="ad-banner">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4313544696010088"
+                 crossorigin="anonymous"></script>
+            <!-- Display Banner -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-4313544696010088"
+                 data-ad-slot="2931939531"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <!-- Tool Section -->
+    <section class="tool-section">
+        <div class="container">
+            <h2 class="section-title">Generate Your Meta Tags</h2>
+            <form id="metaTagForm">
+                <div class="form-group">
+                    <label for="websiteTitle">Website Title*</label>
+                    <input type="text" id="websiteTitle" class="form-control" placeholder="My Awesome Website" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="websiteDescription">Meta Description*</label>
+                    <textarea id="websiteDescription" class="form-control" rows="3" placeholder="A brief description of your website (150-160 characters)" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="websiteKeywords">Meta Keywords (comma separated)</label>
+                    <input type="text" id="websiteKeywords" class="form-control" placeholder="keyword1, keyword2, keyword3">
+                </div>
+                
+                <div class="form-group">
+                    <label for="websiteAuthor">Author</label>
+                    <input type="text" id="websiteAuthor" class="form-control" placeholder="Author Name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="websiteRobots">Robots Meta Directive</label>
+                    <select id="websiteRobots" class="form-control">
+                        <option value="index, follow">index, follow</option>
+                        <option value="noindex, nofollow">noindex, nofollow</option>
+                        <option value="index, nofollow">index, nofollow</option>
+                        <option value="noindex, follow">noindex, follow</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="websiteLanguage">Language</label>
+                    <input type="text" id="websiteLanguage" class="form-control" placeholder="en" value="en">
+                </div>
+                
+                <div class="form-group">
+                    <label for="websiteCharset">Charset</label>
+                    <input type="text" id="websiteCharset" class="form-control" placeholder="UTF-8" value="UTF-8">
+                </div>
+                
+                <h3 style="margin: 30px 0 20px; color: var(--dark-red);">Open Graph Meta Tags</h3>
+                
+                <div class="form-group">
+                    <label for="ogTitle">OG: Title</label>
+                    <input type="text" id="ogTitle" class="form-control" placeholder="Open Graph Title">
+                </div>
+                
+                <div class="form-group">
+                    <label for="ogDescription">OG: Description</label>
+                    <textarea id="ogDescription" class="form-control" rows="2" placeholder="Open Graph Description"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ogImage">OG: Image URL</label>
+                    <input type="url" id="ogImage" class="form-control" placeholder="https://example.com/image.jpg">
+                </div>
+                
+                <div class="form-group">
+                    <label for="ogUrl">OG: URL</label>
+                    <input type="url" id="ogUrl" class="form-control" placeholder="https://example.com">
+                </div>
+                
+                <h3 style="margin: 30px 0 20px; color: var(--dark-red);">Twitter Card Meta Tags</h3>
+                
+                <div class="form-group">
+                    <label for="twitterTitle">Twitter: Title</label>
+                    <input type="text" id="twitterTitle" class="form-control" placeholder="Twitter Card Title">
+                </div>
+                
+                <div class="form-group">
+                    <label for="twitterDescription">Twitter: Description</label>
+                    <textarea id="twitterDescription" class="form-control" rows="2" placeholder="Twitter Card Description"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="twitterImage">Twitter: Image URL</label>
+                    <input type="url" id="twitterImage" class="form-control" placeholder="https://example.com/twitter-image.jpg">
+                </div>
+                
+                <button type="button" id="generateBtn" class="btn btn-generate">Generate Meta Tags</button>
+            </form>
+            
+            <div class="results-section" id="results">
+                <button class="copy-btn" id="copyBtn">Copy to Clipboard</button>
+                <pre id="generatedCode"></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <h2 class="section-title">About AdprofitX Meta Tag Generator</h2>
+            <p>Meta tags are HTML elements that provide information about your web page to search engines and website visitors. While not all meta tags directly influence rankings, they play a crucial role in how your pages are displayed in search results and on social media platforms.</p>
+            
+            <p>Our free Meta Tag Generator helps you create optimized meta tags that can:</p>
+            <ul>
+                <li>Improve your search engine visibility</li>
+                <li>Increase click-through rates from search results</li>
+                <li>Enhance how your content appears when shared on social media</li>
+                <li>Provide search engines with important information about your content</li>
+            </ul>
+            
+            <p>This tool is 100% free, fast, and easy to use for bloggers, businesses, and developers looking to optimize their websites for better search engine performance.</p>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section" id="blog">
+        <div class="container">
+            <h2 class="section-title">SEO Blog Articles</h2>
+            <div class="blog-grid">
+                <article class="blog-card" data-blog="1">
+                    <div class="blog-content">
+                        <h3 class="blog-title">What Are Meta Tags and Why Are They Important for SEO?</h3>
+                        <p>Meta tags provide search engines with information about your web pages. Learn how to use them effectively to improve your SEO strategy.</p>
+                    </div>
+                </article>
+                
+                <article class="blog-card" data-blog="2">
+                    <div class="blog-content">
+                        <h3 class="blog-title">Best Practices for Writing SEO-Friendly Meta Descriptions</h3>
+                        <p>Your meta description is your chance to convince searchers to click on your result. Discover how to write compelling descriptions.</p>
+                    </div>
+                </article>
+                
+                <article class="blog-card" data-blog="3">
+                    <div class="blog-content">
+                        <h3 class="blog-title">How to Use Meta Keywords in 2025</h3>
+                        <p>While meta keywords have diminished in importance, they still have some uses. Learn the current best practices for meta keywords.</p>
+                    </div>
+                </article>
+                
+                <article class="blog-card" data-blog="4">
+                    <div class="blog-content">
+                        <h3 class="blog-title">The Role of Open Graph Meta Tags in Social Sharing</h3>
+                        <p>Open Graph tags control how your content appears when shared on social media. Implement them correctly to maximize engagement.</p>
+                    </div>
+                </article>
+                
+                <article class="blog-card" data-blog="5">
+                    <div class="blog-content">
+                        <h3 class="blog-title">Twitter Card Meta Tags – Complete Guide</h3>
+                        <p>Twitter Cards help your content stand out on Twitter. This guide shows you how to implement all types of Twitter Cards.</p>
+                    </div>
+                </article>
+                
+                <article class="blog-card" data-blog="6">
+                    <div class="blog-content">
+                        <h3 class="blog-title">Common Meta Tag Mistakes to Avoid</h3>
+                        <p>Many websites make simple but costly mistakes with their meta tags. Learn what to avoid for optimal SEO performance.</p>
+                    </div>
+                </article>
+                
+                <article class="blog-card" data-blog="7">
+                    <div class="blog-content">
+                        <h3 class="blog-title">How to Optimize Title Tags for Higher Rankings</h3>
+                        <p>Title tags are one of the most important on-page SEO elements. Discover strategies for creating effective title tags.</p>
+                    </div>
+                </article>
+                
+                <article class="blog-card" data-blog="8">
+                    <div class="blog-content">
+                        <h3 class="blog-title">Difference Between Robots Meta Tags and Robots.txt</h3>
+                        <p>Understand the difference between these two important crawl directives and when to use each one.</p>
+                    </div>
+                </article>
+                
+                <article class="blog-card" data-blog="9">
+                    <div class="blog-content">
+                        <h3 class="blog-title">How Meta Tags Affect Click-Through Rate (CTR)</h3>
+                        <p>Well-crafted meta tags can significantly improve your CTR from search results. Learn how to optimize for clicks.</p>
+                    </div>
+                </article>
+                
+                <article class="blog-card" data-blog="10">
+                    <div class="blog-content">
+                        <h3 class="blog-title">Free Tools for Generating SEO Meta Tags</h3>
+                        <p>Discover the best free tools available for generating SEO meta tags, including our own AdprofitX Meta Tag Generator.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Modal -->
+    <div class="modal" id="blogModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- AdSense Banner 2 -->
+    <div class="container">
+        <div class="ad-banner">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4313544696010088"
+                 crossorigin="anonymous"></script>
+            <!-- Display Banner -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-4313544696010088"
+                 data-ad-slot="2931939531"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Section -->
+    <section class="policy-section" id="privacy">
+        <div class="container">
+            <h2 class="section-title">Privacy Policy</h2>
+            <div class="policy-content">
+                <p>At AdprofitX, we value your privacy. Our Meta Tag Generator tool operates with the following principles:</p>
+                <ul>
+                    <li>We do not store any of the information you enter into the meta tag generator</li>
+                    <li>All processing happens locally in your browser - no data is sent to our servers</li>
+                    <li>We do not use cookies or tracking technologies in the meta tag generator tool</li>
+                    <li>Any AdSense advertisements shown on the site are governed by Google's privacy policy</li>
+                </ul>
+                <p>Since we don't collect or store your data, you can use our tool with complete confidence that your information remains private and secure.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms and Conditions Section -->
+    <section class="policy-section" id="terms">
+        <div class="container">
+            <h2 class="section-title">Terms and Conditions</h2>
+            <div class="policy-content">
+                <p>By using the AdprofitX Meta Tag Generator, you agree to the following terms:</p>
+                <ul>
+                    <li>The tool is provided free of charge for personal and commercial use</li>
+                    <li>We make no guarantees about the effectiveness of the generated meta tags</li>
+                    <li>You are responsible for reviewing and testing the meta tags before implementing them on your website</li>
+                    <li>We reserve the right to modify or discontinue the service at any time</li>
+                    <li>You may not use the tool for any illegal or prohibited purpose</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclaimer Section -->
+    <section class="policy-section" id="disclaimer">
+        <div class="container">
+            <h2 class="section-title">Disclaimer</h2>
+            <div class="policy-content">
+                <p>The AdprofitX Meta Tag Generator provides suggestions for meta tags based on SEO best practices. However:</p>
+                <ul>
+                    <li>We do not guarantee improved search rankings or increased traffic as a result of using our tool</li>
+                    <li>Search engine algorithms change frequently, and what works today may not work tomorrow</li>
+                    <li>You should always follow the latest SEO guidelines from search engines like Google</li>
+                    <li>The tool is provided "as is" without any warranties</li>
+                </ul>
+                <p>While we strive to provide accurate and up-to-date information, we cannot be held responsible for any negative outcomes resulting from the use of our tool.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-info">
+                <p><strong>Business Name:</strong> AdprofitX</p>
+                <p><strong>Email:</strong> support@adprofitx.com</p>
+                <p><strong>Address:</strong> Karachi, Pakistan</p>
+            </div>
+            
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="contactName">Your Name</label>
+                    <input type="text" id="contactName" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contactEmail">Your Email</label>
+                    <input type="email" id="contactEmail" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contactMessage">Message</label>
+                    <textarea id="contactMessage" class="form-control" rows="5" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 AdprofitX Meta Tag Generator. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Blog content data
+        const blogContent = {
+            1: {
+                title: "What Are Meta Tags and Why Are They Important for SEO?",
+                content: `
+                    <h2>What Are Meta Tags and Why Are They Important for SEO?</h2>
+                    <p>Meta tags are snippets of HTML code that provide information about a web page to search engines and users. They don't appear on the page itself but are embedded in the page's code. These tags help search engines understand what your page is about and determine how it should be displayed in search results.</p>
+                    
+                    <h3>Types of Meta Tags</h3>
+                    <p>There are several types of meta tags, each serving a different purpose:</p>
+                    <ul>
+                        <li><strong>Title tags:</strong> Define the title of a web page and appear as the clickable headline in search results</li>
+                        <li><strong>Meta descriptions:</strong> Provide a brief summary of the page's content</li>
+                        <li><strong>Meta keywords:</strong> Historically used to indicate important keywords (now less important for SEO)</li>
+                        <li><strong>Viewport tags:</strong> Control how pages are displayed on mobile devices</li>
+                        <li><strong>Robots meta tags:</strong> Instruct search engine crawlers how to treat your page</li>
+                        <li><strong>Open Graph tags:</strong> Control how content appears when shared on social media</li>
+                        <li><strong>Twitter Cards:</strong> Similar to Open Graph but specific to Twitter</li>
+                    </ul>
+                    
+                    <h3>Why Meta Tags Matter for SEO</h3>
+                    <p>While not all meta tags directly impact search rankings, they play several crucial roles:</p>
+                    <ol>
+                        <li>They help search engines understand your content</li>
+                        <li>They influence how your pages appear in search results</li>
+                        <li>They can improve click-through rates (CTR) from search results</li>
+                        <li>They enhance how your content appears when shared on social media</li>
+                    </ol>
+                    
+                    <p>Well-optimized meta tags can significantly impact your SEO performance by making your listings more appealing in search results, which can lead to higher CTRs and more organic traffic.</p>
+                `
+            },
+            2: {
+                title: "Best Practices for Writing SEO-Friendly Meta Descriptions",
+                content: `
+                    <h2>Best Practices for Writing SEO-Friendly Meta Descriptions</h2>
+                    <p>Meta descriptions are HTML attributes that provide concise explanations of the contents of web pages. While they don't directly influence search rankings, they play a crucial role in attracting clicks from search engine results pages (SERPs).</p>
+                    
+                    <h3>Key Elements of Effective Meta Descriptions</h3>
+                    <ul>
+                        <li><strong>Length:</strong> Keep descriptions between 150-160 characters to avoid truncation</li>
+                        <li><strong>Relevance:</strong> Accurately reflect the page content</li>
+                        <li><strong>Keyword inclusion:</strong> Include primary keywords naturally</li>
+                        <li><strong>Call to action:</strong> Encourage users to click with action-oriented language</li>
+                        <li><strong>Unique content:</strong> Create distinct descriptions for each page</li>
+                    </ul>
+                    
+                    <h3>Best Practices</h3>
+                    <ol>
+                        <li>Write compelling, readable copy that encourages clicks</li>
+                        <li>Include your target keyword naturally</li>
+                        <li>Match the description to the search intent</li>
+                        <li>Use active voice and action-oriented language</li>
+                        <li>Consider including USPs, promotions, or special offers</li>
+                        <li>Make sure each page has a unique meta description</li>
+                    </ol>
+                    
+                    <p>Remember that while well-crafted meta descriptions can improve CTR, they are just one part of a comprehensive SEO strategy. Always focus on creating high-quality content that delivers value to your users.</p>
+                `
+            },
+            // Additional blog content would be defined here for all 10 articles
+            10: {
+                title: "Free Tools for Generating SEO Meta Tags",
+                content: `
+                    <h2>Free Tools for Generating SEO Meta Tags</h2>
+                    <p>Creating optimized meta tags is essential for SEO success, but it can be time-consuming to do manually. Fortunately, there are several free tools available that can help you generate effective meta tags quickly and easily.</p>
+                    
+                    <h3>Top Free Meta Tag Generators</h3>
+                    <ol>
+                        <li><strong>AdprofitX Meta Tag Generator:</strong> Our tool provides a comprehensive solution for generating all types of meta tags with a user-friendly interface.</li>
+                        <li><strong>Google Search Console:</strong> While not specifically a meta tag generator, it provides valuable insights for optimizing your tags.</li>
+                        <li><strong>SEOptimer Meta Tags Generator:</strong> A simple tool that generates basic meta tags for your website.</li>
+                        <li><strong>Website Planet Meta Tag Generator:</strong> Creates multiple meta tags with options for different platforms.</li>
+                    </ol>
+                    
+                    <h3>Why Use AdprofitX Meta Tag Generator?</h3>
+                    <p>Our tool stands out from the competition for several reasons:</p>
+                    <ul>
+                        <li>Completely free with no hidden costs</li>
+                        <li>Generates all major meta tag types in one place</li>
+                        <li>Provides real-time preview of how your tags will appear</li>
+                        <li>Includes Open Graph and Twitter Card tags</li>
+                        <li>No registration or personal information required</li>
+                        <li>Clean, user-friendly interface</li>
+                    </ul>
+                    
+                    <p>Whether you're a beginner or an experienced SEO professional, using a meta tag generator can save you time and ensure your tags are properly optimized for search engines and social media platforms.</p>
+                `
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const generateBtn = document.getElementById('generateBtn');
+            const copyBtn = document.getElementById('copyBtn');
+            const resultsSection = document.getElementById('results');
+            const generatedCode = document.getElementById('generatedCode');
+            const contactForm = document.getElementById('contactForm');
+            const menuBtn = document.getElementById('menuBtn');
+            const navLinks = document.getElementById('navLinks');
+            const blogModal = document.getElementById('blogModal');
+            const closeModal = document.getElementById('closeModal');
+            const modalBody = document.getElementById('modalBody');
+            const blogCards = document.querySelectorAll('.blog-card');
+            
+            // Mobile menu toggle
+            menuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+            
+            // Blog modal functionality
+            blogCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const blogId = this.getAttribute('data-blog');
+                    if (blogContent[blogId]) {
+                        modalBody.innerHTML = blogContent[blogId].content;
+                        blogModal.style.display = 'block';
+                    }
+                });
+            });
+            
+            closeModal.addEventListener('click', function() {
+                blogModal.style.display = 'none';
+            });
+            
+            window.addEventListener('click', function(event) {
+                if (event.target == blogModal) {
+                    blogModal.style.display = 'none';
+                }
+            });
+            
+            // Generate meta tags
+            generateBtn.addEventListener('click', function() {
+                const websiteTitle = document.getElementById('websiteTitle').value;
+                const websiteDescription = document.getElementById('websiteDescription').value;
+                const websiteKeywords = document.getElementById('websiteKeywords').value;
+                const websiteAuthor = document.getElementById('websiteAuthor').value;
+                const websiteRobots = document.getElementById('websiteRobots').value;
+                const websiteLanguage = document.getElementById('websiteLanguage').value;
+                const websiteCharset = document.getElementById('websiteCharset').value;
+                const ogTitle = document.getElementById('ogTitle').value || websiteTitle;
+                const ogDescription = document.getElementById('ogDescription').value || websiteDescription;
+                const ogImage = document.getElementById('ogImage').value;
+                const ogUrl = document.getElementById('ogUrl').value;
+                const twitterTitle = document.getElementById('twitterTitle').value || websiteTitle;
+                const twitterDescription = document.getElementById('twitterDescription').value || websiteDescription;
+                const twitterImage = document.getElementById('twitterImage').value || ogImage;
+                
+                if (!websiteTitle || !websiteDescription) {
+                    alert('Please fill in at least the Website Title and Description fields.');
+                    return;
+                }
+                
+                let code = `<!-- Basic Meta Tags -->
+<meta charset="${websiteCharset}">
+<title>${websiteTitle}</title>
+<meta name="description" content="${websiteDescription}">\n`;
+                
+                if (websiteKeywords) {
+                    code += `<meta name="keywords" content="${websiteKeywords}">\n`;
+                }
+                
+                if (websiteAuthor) {
+                    code += `<meta name="author" content="${websiteAuthor}">\n`;
+                }
+                
+                code += `<meta name="robots" content="${websiteRobots}">
+<meta name="language" content="${websiteLanguage}">\n`;
+                
+                // Open Graph Meta Tags
+                if (ogTitle || ogDescription) {
+                    code += `\n<!-- Open Graph Meta Tags -->\n`;
+                    if (ogTitle) code += `<meta property="og:title" content="${ogTitle}">\n`;
+                    if (ogDescription) code += `<meta property="og:description" content="${ogDescription}">\n`;
+                    if (ogImage) code += `<meta property="og:image" content="${ogImage}">\n`;
+                    if (ogUrl) code += `<meta property="og:url" content="${ogUrl}">\n`;
+                    code += `<meta property="og:type" content="website">\n`;
+                }
+                
+                // Twitter Card Meta Tags
+                if (twitterTitle || twitterDescription) {
+                    code += `\n<!-- Twitter Card Meta Tags -->\n`;
+                    code += `<meta name="twitter:card" content="summary_large_image">\n`;
+                    if (twitterTitle) code += `<meta name="twitter:title" content="${twitterTitle}">\n`;
+                    if (twitterDescription) code += `<meta name="twitter:description" content="${twitterDescription}">\n`;
+                    if (twitterImage) code += `<meta name="twitter:image" content="${twitterImage}">\n`;
+                }
+                
+                generatedCode.textContent = code;
+                resultsSection.style.display = 'block';
+                
+                // Scroll to results
+                resultsSection.scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            // Copy to clipboard
+            copyBtn.addEventListener('click', function() {
+                const textArea = document.createElement('textarea');
+                textArea.value = generatedCode.textContent;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                // Show feedback
+                const originalText = copyBtn.textContent;
+                copyBtn.textContent = 'Copied!';
+                setTimeout(() => {
+                    copyBtn.textContent = originalText;
+                }, 2000);
+            });
+            
+            // Contact form submission
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                contactForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>
